@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table align="center" width="300" height="160" border="0">
+        <form action="" name="form1">
+            <tr>
+                <td width="80" align="right">用户名:</td>
+                <td>
+                    <input type="text" onfocus="txtfocus()" onBlur="txtblur()">
+                </td>
+            </tr>
+            <tr>
+                <td width="80" align="right">密码:</td>
+                <td>
+                    <input type="text" onfocus="txtfocus()" onBlur="txtblur()">
+                </td>
+            </tr>
+            <tr>
+                <td width="80" align="right">真实姓名:</td>
+                <td>
+                    <input type="text" onfocus="txtfocus()" onBlur="txtblur()">
+                </td>
+            </tr>
+            <tr>
+                <td width="80" align="right">性别:</td>
+                <td>
+                    <input type="text" onfocus="txtfocus()" onBlur="txtblur()">
+                </td>
+            </tr>
+            <tr>
+                <td width="80" align="right">邮箱:</td>
+                <td>
+                    <input type="text" onfocus="txtfocus()" onBlur="txtblur()">
+                </td>
+            </tr>
+
+        </form>
+    </table>
+    <script>
+        function txtfocus(){
+            var e = window.event;
+            var obj = e.srcElement;
+            obj.style.background = "#FF9966";
+        }
+        function txtblur(){
+            var e = window.event;
+            var obj = e.srcElement;
+            obj.style.background = "#FFFFFf";
+        }
+    </script>
+    <form action="" name="form2">
+        <input name="textfield" type="text" size="18" value="零基础学javascript">
+        <select name="menu1" id="" onchange="Fcolor()">
+            <option value="black">黑色</option>
+            <option value="yellow">黄色</option>
+            <option value="blue">蓝色</option>
+            <option value="green">绿色</option>
+            <option value="red">红色</option>
+            <option value="purple">紫色</option>
+        </select>
+    </form>
+    <script>
+        function Fcolor(){
+            var e = window.event;
+            var obj = e.srcElement;
+            form2.textfield.style.color = obj.value;
+        }
+    </script>
+    <form action="" name="form3" onsubmit="return AllSubmit">
+        <input type="submit" name="sub" id="sub2" value="提交">&nbsp;
+        <input type="reset" name="Submit2" value="重置">
+    </form>
+    <script>
+        function AllSubmit(){
+            var T = true;
+            var e = window.event;
+            var obj = e.srcElement;
+            for (var i = 1; i <= 7; i++){
+                if(eval("obj." + "txt" + i).value=""){
+                    T = false;
+                    break;
+                }
+            }
+            if(!T){
+            alert('提交信息不允许为空');
+        }
+        return T;
+        }
+        
+    </script>
+</body>
+</html>
